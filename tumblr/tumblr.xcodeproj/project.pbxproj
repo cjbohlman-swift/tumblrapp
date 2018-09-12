@@ -13,6 +13,7 @@
 		D98BED4921498861007E2D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BED4721498861007E2D50 /* Main.storyboard */; };
 		D98BED4B21498862007E2D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98BED4A21498862007E2D50 /* Assets.xcassets */; };
 		D98BED4E21498862007E2D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BED4C21498862007E2D50 /* LaunchScreen.storyboard */; };
+		D9B595332149B07E001CE95F /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B595322149B07E001CE95F /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D98BED4A21498862007E2D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D98BED4D21498862007E2D50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D98BED4F21498862007E2D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9B595322149B07E001CE95F /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				D98BED4321498861007E2D50 /* AppDelegate.swift */,
 				D98BED4521498861007E2D50 /* PhotosViewController.swift */,
 				D98BED4721498861007E2D50 /* Main.storyboard */,
+				D9B595322149B07E001CE95F /* PostCell.swift */,
 				D98BED4A21498862007E2D50 /* Assets.xcassets */,
 				D98BED4C21498862007E2D50 /* LaunchScreen.storyboard */,
 				D98BED4F21498862007E2D50 /* Info.plist */,
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B595332149B07E001CE95F /* PostCell.swift in Sources */,
 				D98BED4621498861007E2D50 /* PhotosViewController.swift in Sources */,
 				D98BED4421498861007E2D50 /* AppDelegate.swift in Sources */,
 			);
