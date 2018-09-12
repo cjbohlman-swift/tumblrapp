@@ -1,14 +1,14 @@
-# Lab 1 - *Name of App Here*
+# Lab 1 - TumblrLite
 
-**Name of your app** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
+**TumblrLite** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
-Time spent: **X** hours spent in total
+Time spent: **1.5** hours spent in total
 
 ## User Stories
 
 The following **required** user stories are complete:
 
-- [ ] User can scroll through a feed of images returned from the Tumblr API (5pts)
+- [x] User can scroll through a feed of images returned from the Tumblr API (5pts)
 
 The following **stretch** user stories are implemented:
 
@@ -19,28 +19,28 @@ The following **stretch** user stories are implemented:
 
 The following **additional** user stories are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- [x] Added pull to refresh (+1-3pts)
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Placeholder images
+2. Transition from images from network
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/lAMp4bc.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Custom cells are confusing
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright 2018 Bohlman
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
