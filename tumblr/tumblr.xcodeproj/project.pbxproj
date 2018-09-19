@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E27F8A86601FF8239A090DC /* Pods_tumblr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C3867798CF809CCF1825D2 /* Pods_tumblr.framework */; };
+		D98142512152E38D00F14D93 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98142502152E38D00F14D93 /* DetailViewController.swift */; };
 		D98BED4421498861007E2D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BED4321498861007E2D50 /* AppDelegate.swift */; };
 		D98BED4621498861007E2D50 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BED4521498861007E2D50 /* PhotosViewController.swift */; };
 		D98BED4921498861007E2D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BED4721498861007E2D50 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		77A3300ABB3CC2BDAA90B2AB /* Pods-tumblr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tumblr.release.xcconfig"; path = "Pods/Target Support Files/Pods-tumblr/Pods-tumblr.release.xcconfig"; sourceTree = "<group>"; };
 		9E2908F0CEA37AEEC1DC0655 /* Pods-tumblr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tumblr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tumblr/Pods-tumblr.debug.xcconfig"; sourceTree = "<group>"; };
 		B9C3867798CF809CCF1825D2 /* Pods_tumblr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tumblr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98142502152E38D00F14D93 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D98BED4021498861007E2D50 /* tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BED4321498861007E2D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98BED4521498861007E2D50 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				D98BED4721498861007E2D50 /* Main.storyboard */,
 				D9B595322149B07E001CE95F /* PostCell.swift */,
 				D98BED4A21498862007E2D50 /* Assets.xcassets */,
+				D98142502152E38D00F14D93 /* DetailViewController.swift */,
 				D98BED4C21498862007E2D50 /* LaunchScreen.storyboard */,
 				D98BED4F21498862007E2D50 /* Info.plist */,
 			);
@@ -208,6 +211,7 @@
 				D9B595332149B07E001CE95F /* PostCell.swift in Sources */,
 				D98BED4621498861007E2D50 /* PhotosViewController.swift in Sources */,
 				D98BED4421498861007E2D50 /* AppDelegate.swift in Sources */,
+				D98142512152E38D00F14D93 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

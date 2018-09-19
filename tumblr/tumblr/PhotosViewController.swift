@@ -10,9 +10,11 @@ import UIKit
 import AlamofireImage
 
 
-class PhotosViewController: UIViewController, UITableViewDataSource {
+class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     
     @IBOutlet weak var photoTableView: UITableView!
@@ -33,6 +35,28 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! DetailViewController
+        let cell = sender as! UITableViewCell
+        let indexPath = photoTableView.indexPath(for: cell)!
+        let post = posts[indexPath.row]
+        if let photos = post["photos"] as? [[String: Any]] {
+            // 1.
+            let photo = photos[0]
+            // 2.
+            let originalSize = photo["original_size"] as! [String: Any]
+            // 3.
+            let urlString = originalSize["url"] as! String
+            // 4.
+            let url = URL(string: urlString)
+            vc.imageURL = url
+        }
+        
+    }
+    
+    
+    
     
     func retrieveTumblrAPIData() {
         // Network request snippet
