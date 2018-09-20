@@ -12,18 +12,27 @@ import AlamofireImage
 
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+    
+    
     
     
     @IBOutlet weak var photoTableView: UITableView!
     var posts: [[String: Any]] = []
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return posts.count
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         photoTableView.dataSource = self
+        photoTableView.delegate = self
         photoTableView.rowHeight = 260
+        photoTableView.sectionHeaderHeight = 20
         retrieveTumblrAPIData()
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
@@ -40,7 +49,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let vc = segue.destination as! DetailViewController
         let cell = sender as! UITableViewCell
         let indexPath = photoTableView.indexPath(for: cell)!
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
         if let photos = post["photos"] as? [[String: Any]] {
             // 1.
             let photo = photos[0]
@@ -90,12 +99,12 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = photoTableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
         if let photos = post["photos"] as? [[String: Any]] {
             // 1.
             let photo = photos[0]
@@ -109,6 +118,41 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
 
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        
+        let profileView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        profileView.clipsToBounds = true
+        profileView.layer.cornerRadius = 15;
+        profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).cgColor
+        profileView.layer.borderWidth = 1;
+        
+        // Set the avatar
+        profileView.af_setImage(withURL: URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/avatar")!)
+        headerView.addSubview(profileView)
+        
+        // Add a UILabel for the date here
+        // Use the section number to get the right URL
+        let label = UILabel(frame: CGRect(x: 60, y: 10, width: 2600, height: 30))
+        let dateString = posts[section]["date"] as! String
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
+        let showDate = inputFormatter.date(from: dateString)
+        inputFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
+        let resultString = inputFormatter.string(from: showDate!)
+        //print(resultString)
+        label.text = resultString
+        
+        headerView.addSubview(label)
+        
+        return headerView
     }
     
     // Makes a network request to get updated data
